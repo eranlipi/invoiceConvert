@@ -28,7 +28,7 @@ class ParseTxtFile {
   }
 
   //
-    # this function get the invoce Array 
+    # this function get the invoce Array and validate there not empty array
     # convert the ascii to numbers
   //
   static public function getAsciiChar($array){
@@ -37,9 +37,11 @@ class ParseTxtFile {
     self::$line2 = $array[1] ?? ' ';
     self::$line3 = $array[2] ?? ' ';
  
-   
-    $invoice = self::convertAscii2Number();
+    if(self::$line1 == ' ' || self::$line2 == ' ' || self::$line3 == ' ' ){
+      return '';
+    }
 
+    $invoice = self::convertAscii2Number();
     return  $invoice; 
   }
  //
