@@ -14,14 +14,19 @@
 
   $invoice = '';
   foreach($string2Array as $key => $value){
-    
     $invoice .= ParseTxtFile::getAsciiChar($value) . "\n" .PHP_EOL;
   }
+  //
+    # if you choose to see the answer inside iframe
+  //
   if(isset($_POST['showIframe'])){
     echo '<pre>';
     echo $invoice;
     exit;
   }
+  //
+    # if you choose to download txt file
+  //
   $file = "output_".$_FILES['file']['name'];
   header('Content-Disposition: attachment; filename='.basename($file));
   header("Content-Type: text/plan");

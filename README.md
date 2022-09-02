@@ -1,6 +1,8 @@
 # invoiceConvert
 invoice Ascii art Convert to numbers
 
+this project work as a micro web service.
+
 
 ## instaltion
 you can install  php server at your visual studio code
