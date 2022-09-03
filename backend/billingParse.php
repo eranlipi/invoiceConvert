@@ -14,7 +14,7 @@
 
   $invoice = '';
   foreach($string2Array as $key => $value){
-    $invoice .= ParseTxtFile::getAsciiChar($value) . "\n" .PHP_EOL;
+    $invoice .= ParseTxtFile::convertAscii2Number($value) . "\n" .PHP_EOL;
   }
   //
     # if you choose to see the answer inside iframe

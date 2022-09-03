@@ -27,12 +27,10 @@ class ParseTxtFile {
     return self::$invoceSplitedList;
   }
 
+ //
+    # convert the ascii to numbers and add ILLEGAL
   //
-    # this function get the invoce Array and validate there not empty array
-    # convert the ascii to numbers
-  //
-  static public function getAsciiChar($array){
-    
+  static public function convertAscii2Number($array){
     self::$line1 = $array[0] ?? ' ';
     self::$line2 = $array[1] ?? ' ';
     self::$line3 = $array[2] ?? ' ';
@@ -41,13 +39,6 @@ class ParseTxtFile {
       return '';
     }
 
-    $invoice = self::convertAscii2Number();
-    return  $invoice; 
-  }
- //
-    # convert the ascii to numbers and add ILLEGAL
-  //
-  static public function convertAscii2Number(){
     self::$numbersList = array();
 
     $list1 = str_split(self::$line1 , $length = 3);
