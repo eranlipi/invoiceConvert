@@ -4,9 +4,7 @@ class ParseTxtFile {
 
   static public $invoceSplitedList = array();
   static public $numbersList = array();
-  static public $line1;
-  static public $line2;
-  static public $line3;
+
 
   //
     # this function get the invoce list and split to lines every invoce
@@ -31,19 +29,19 @@ class ParseTxtFile {
     # convert the ascii to numbers and add ILLEGAL
   //
   static public function convertAscii2Number($array){
-    self::$line1 = $array[0] ?? ' ';
-    self::$line2 = $array[1] ?? ' ';
-    self::$line3 = $array[2] ?? ' ';
+    $line1 = $array[0] ?? ' ';
+    $line2 = $array[1] ?? ' ';
+    $line3 = $array[2] ?? ' ';
  
-    if(self::$line1 == ' ' || self::$line2 == ' ' || self::$line3 == ' ' ){
+    if($line1 == ' ' || $line2 == ' ' || $line3 == ' ' ){
       return '';
     }
 
     self::$numbersList = array();
 
-    $list1 = str_split(self::$line1 , $length = 3);
-    $list2 = str_split(self::$line2 , $length = 3);
-    $list3 = str_split(self::$line3 , $length = 3);
+    $list1 = str_split($line1 , $length = 3);
+    $list2 = str_split($line2 , $length = 3);
+    $list3 = str_split($line3 , $length = 3);
 
     self::splitNumbers($list1);
     self::splitNumbers($list2);
